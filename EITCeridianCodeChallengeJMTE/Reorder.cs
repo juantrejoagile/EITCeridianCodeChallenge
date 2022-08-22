@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 
 namespace EITCeridianCodeChallengeJMTE
 {
@@ -20,51 +20,26 @@ namespace EITCeridianCodeChallengeJMTE
 
             try
             {
-                // Validation for number of order parameters
-                if (!order.Length.Equals(4))
-                { throw new Exception("The number of order values is not valid."); }
+                // Validation for names and order
+                ValidateEntries(names, order);
 
-                // Object to compare order parameters
-                string[] validOrderValues = new string[] { "1", "2", "3", "4" };
-
-                // Validate order parameters values
-                if (order.Any(o => !validOrderValues.Any(v => v.Trim().Equals(o.Trim()))))
-                { throw new Exception("A order value is not valid."); }
-
-                // Decompose words of name
+                // Objects for decomposicion
                 string[] words;
-                string first;
-                string second;
-                string third;
-                string fourth;
+                StringBuilder newName;
 
                 // Iteration
                 foreach (string name in names)
                 {
-                    first = string.Empty;
-                    second = string.Empty;
-                    third = string.Empty;
-                    fourth = string.Empty;
-
-                    // Split
+                    // Decomposing in words
                     words = name.Split(' ');
-                    // If names are uncomplete can not be processed
-                    if (words.Length.Equals(4))
-                    {
-                        // Construct new name using new order
-                        first = words[Convert.ToInt32(order[0]) - 1];
-                        second = words[Convert.ToInt32(order[1]) - 1];
-                        third = words[Convert.ToInt32(order[2]) - 1];
-                        fourth = words[Convert.ToInt32(order[3]) - 1];
-                    }
-                    else
-                    {
-                        // Error message for uncompleted name
-                        throw new Exception("Uncompleted words for this name.");
-                    }
+                    newName = new StringBuilder();
+
+                    // Ordering by the array order into new Name
+                    for (int item = 0; item < order.Length; item++)
+                    { newName.AppendFormat("{0} ", words[Convert.ToInt32(order[item]) - 1]); }
 
                     // Filling result
-                    result.Add($"{first} {second} {third} {fourth}");
+                    result.Add(newName.ToString().Trim());
                 }
             }
             catch (Exception ex)
@@ -76,6 +51,40 @@ namespace EITCeridianCodeChallengeJMTE
             // Sending result
             return result.ToArray();
         }
- 
+
+        /// <summary>
+        /// Validate Entries to Ordering
+        /// </summary>
+        /// <param name="names">Names to be validated</param>
+        /// <param name="order">Order expected to validate names</param>
+        /// <exception cref="Exception">The exception throwed if names and order does not match, or invalid order found</exception>
+        private void ValidateEntries(string[] names, string[] order)
+        {
+            // Object to get integer value
+            int orderValue;
+            foreach (string value in order)
+            {
+                // Validate non integer value
+                if (!int.TryParse(value, out orderValue))
+                { throw new Exception($"ERROR: The order value {value} is not valid."); }
+
+                // Validate non minus or major value than the consecutive expected in order
+                if (orderValue < 1 ||
+                    orderValue > order.Length)
+                { throw new Exception($"ERROR: The order value {orderValue} is not valid."); }
+            }
+
+            // Object to get splited words of the name
+            string[] words;
+            foreach (string name in names)
+            {
+                words = name.Split(' ');
+
+                // Validate quantity of words match order expected
+                if (!words.Length.Equals(order.Length))
+                { throw new Exception($"ERROR: The quantity of words [ {name} - {words.Length} ] doesn't match the order arguments."); }
+            }
+        }
+
     }
 }
