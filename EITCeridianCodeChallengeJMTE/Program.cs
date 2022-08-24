@@ -46,25 +46,17 @@ namespace EITCeridianCodeChallengeJMTE
         {
             List<string> names = new List<string>();
 
-            Console.WriteLine("Please provide the ordering expected and the names to be ordered...");
+            Console.WriteLine("Please provide the ordering and names to be sorted...");
             Console.WriteLine();
 
-            Console.WriteLine("First of all you must provide the ordering indicating how many words have to have each name, if it doesn't match");
-            Console.WriteLine("you will get an error... The number of words can be dynamic from 1 to N");
+            Console.WriteLine("First of all provide the ordering, for example 3,2,5,1,4");
             Console.WriteLine();
 
-            Console.WriteLine("Provide the expected ordering like this, for example to enter 5 words name you should input 3,2,5,1,4 and press ENTER");
-            Console.WriteLine();
-
-            Console.Write("Ordering expected:  ");
             string ordering = Console.ReadLine();
             Console.WriteLine();
 
-            Console.WriteLine("Provide each name to be ordered considering that the name have to be the same number of words provided in the");
-            Console.WriteLine("ordering parameter...");
-            Console.WriteLine();
-            Console.WriteLine("For example for the ordering posted above we can enter 'Carlos Fernando Jose Gonzalez Belmont' ...");
-            Console.WriteLine("Input names one by one pressing ENTER for every one, when you done, please type 'end' and ENTER...");
+            Console.WriteLine("Now provide the names to be ordered... For example 'Carlos Fernando Jose Gonzalez Belmont' ...");
+            Console.WriteLine("Type as many set of names as needed by pressing ENTER for every set, when you are done, type 'end' and press ENTER...");
             Console.WriteLine();
 
             string name = string.Empty;

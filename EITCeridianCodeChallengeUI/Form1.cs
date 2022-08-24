@@ -44,6 +44,7 @@ namespace EITCeridianCodeChallengeUI
             if (!results.Any(r => r.Contains("ERROR:")))
             {
                 // Show successful results
+                lbResults.Items.Clear();
                 foreach (string item in results)
                 { lbResults.Items.Add(item); }
             }
