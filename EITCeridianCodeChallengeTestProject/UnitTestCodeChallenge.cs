@@ -24,12 +24,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -43,12 +43,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -62,12 +62,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -81,12 +81,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -100,12 +100,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreNotEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -123,12 +123,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -142,12 +142,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -161,12 +161,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -180,12 +180,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreEqual(result.Any(r => r.Contains("ERROR:")), true);
         }
@@ -199,12 +199,12 @@ namespace EITCeridianCodeChallengeTestProject
             // Names parameter
             string[] names = _names.Split(',');
 
-            // Order parameters
-            string[] order = _order.Split(',');
+            // Ordering parameters
+            string[] ordering = _order.Split(',');
 
             // Calling method ready for production
             Reorder reorder = new Reorder();
-            string[] result = reorder.ReorderNames(names, order);
+            string[] result = reorder.ReorderNames(names, ordering);
 
             Assert.AreNotEqual(result.Any(r => r.Contains("ERROR:")), true);
         }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EITCeridianCodeChallengeJMT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EITCeridianCodeChallengeTestProject", "EITCeridianCodeChallengeTestProject\EITCeridianCodeChallengeTestProject.csproj", "{1112B3CE-19AF-42E7-9CF6-E0754FFAE4F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EITCeridianCodeChallengeUI", "EITCeridianCodeChallengeUI\EITCeridianCodeChallengeUI.csproj", "{949D374F-DE6E-4102-B855-34AA6AC16A17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1112B3CE-19AF-42E7-9CF6-E0754FFAE4F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1112B3CE-19AF-42E7-9CF6-E0754FFAE4F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1112B3CE-19AF-42E7-9CF6-E0754FFAE4F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949D374F-DE6E-4102-B855-34AA6AC16A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949D374F-DE6E-4102-B855-34AA6AC16A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949D374F-DE6E-4102-B855-34AA6AC16A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949D374F-DE6E-4102-B855-34AA6AC16A17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

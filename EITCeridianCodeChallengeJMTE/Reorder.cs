@@ -11,17 +11,17 @@ namespace EITCeridianCodeChallengeJMTE
         /// Reorder the words inside each name
         /// </summary>
         /// <param name="names">Names array to be reordered</param>
-        /// <param name="order">Order defined to apply</param>
+        /// <param name="ordering">Ordering defined to apply</param>
         /// <returns>New names array</returns>
-        public string[] ReorderNames(string[] names, string[] order)
+        public string[] ReorderNames(string[] names, string[] ordering)
         {
             // Result object
             List<string> result = new List<string>();
 
             try
             {
-                // Validation for names and order
-                ValidateEntries(names, order);
+                // Validation for names and ordering
+                ValidateEntries(names, ordering);
 
                 // Objects for decomposicion
                 string[] words;
@@ -34,9 +34,9 @@ namespace EITCeridianCodeChallengeJMTE
                     words = name.Split(' ');
                     newName = new StringBuilder();
 
-                    // Ordering by the array order into new Name
-                    for (int item = 0; item < order.Length; item++)
-                    { newName.AppendFormat("{0} ", words[Convert.ToInt32(order[item]) - 1]); }
+                    // Ordering by the array ordering into new Name
+                    for (int item = 0; item < ordering.Length; item++)
+                    { newName.AppendFormat("{0} ", words[Convert.ToInt32(ordering[item]) - 1]); }
 
                     // Filling result
                     result.Add(newName.ToString().Trim());
@@ -56,22 +56,22 @@ namespace EITCeridianCodeChallengeJMTE
         /// Validate Entries to Ordering
         /// </summary>
         /// <param name="names">Names to be validated</param>
-        /// <param name="order">Order expected to validate names</param>
-        /// <exception cref="Exception">The exception throwed if names and order does not match, or invalid order found</exception>
-        private void ValidateEntries(string[] names, string[] order)
+        /// <param name="ordering">Ordering expected to validate names</param>
+        /// <exception cref="Exception">The exception throwed if names and ordering does not match, or invalid ordering found</exception>
+        private void ValidateEntries(string[] names, string[] ordering)
         {
             // Object to get integer value
             int orderValue;
-            foreach (string value in order)
+            foreach (string value in ordering)
             {
                 // Validate non integer value
                 if (!int.TryParse(value, out orderValue))
-                { throw new Exception($"ERROR: The order value {value} is not valid."); }
+                { throw new Exception($"ERROR: The ordering value {value} is not valid."); }
 
-                // Validate non minus or major value than the consecutive expected in order
+                // Validate non minus or major value than the consecutive expected in ordering
                 if (orderValue < 1 ||
-                    orderValue > order.Length)
-                { throw new Exception($"ERROR: The order value {orderValue} is not valid."); }
+                    orderValue > ordering.Length)
+                { throw new Exception($"ERROR: The ordering value {orderValue} is not valid."); }
             }
 
             // Object to get splited words of the name
@@ -80,9 +80,9 @@ namespace EITCeridianCodeChallengeJMTE
             {
                 words = name.Split(' ');
 
-                // Validate quantity of words match order expected
-                if (!words.Length.Equals(order.Length))
-                { throw new Exception($"ERROR: The quantity of words [ {name} - {words.Length} ] doesn't match the order arguments."); }
+                // Validate quantity of words match ordering expected
+                if (!words.Length.Equals(ordering.Length))
+                { throw new Exception($"ERROR: The quantity of words [ {name} - {words.Length} ] doesn't match the ordering arguments."); }
             }
         }
 
